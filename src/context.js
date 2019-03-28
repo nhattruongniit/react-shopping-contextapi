@@ -1,11 +1,16 @@
 import React from 'react';
-import { data } from './data';
 
-const TodoContext = React.createContext();
+const ProductContext = React.createContext();
 
-class TodoProvider extends React.Component {
+class ProductProvider extends React.Component {
   state = {
-    todos: data,
+    todo: 1
+  }
+
+  handleSetState = () => {
+    this.setState({
+      todo: 2
+    })
   }
 
   handleDeleteTodo = () => {
@@ -14,19 +19,20 @@ class TodoProvider extends React.Component {
 
   render() {
     return (
-      <TodoContext.Provider value={{
+      <ProductContext.Provider value={{
         ...this.state,
-        handleDeleteTodo: this.handleDeleteTodo
+        handleDeleteTodo: this.handleDeleteTodo,
+        handleSetState: this.handleSetState,
       }}>
         {this.props.children}
-      </TodoContext.Provider>
+      </ProductContext.Provider>
     )
   }
 };
 
-const TodoConsumer = TodoContext.Consumer;
+const ProductConsumer = ProductContext.Consumer;
 
 export {
-  TodoProvider,
-  TodoConsumer,
+  ProductProvider,
+  ProductConsumer,
 }

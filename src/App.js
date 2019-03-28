@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-import { TodoConsumer } from './context';
+import Navbar from './component/Navbar';
+import ProductList from './component/ProductList';
+import ProductDetail from './component/ProductDetail';
+import Cart from './component/Cart';
+import PageNotFound from './component/PageNotFound';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <TodoConsumer>
-          {(value) => {
-            return value.todos.map(todo => (
-              <div key={todo.id} onClick={value.handleDeleteTodo}>{todo.title}</div>
-            ))
-          }}
-        </TodoConsumer>
-      </div>
+      <React.Fragment>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={ProductList} />
+          <Route path="/product-detail" component={ProductDetail} />
+          <Route path="/cart" component={Cart} />
+          <Route path="**" component={PageNotFound} />
+        </Switch>
+      </React.Fragment>
     );
   }
 }
