@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import Title from './Title';
-import Product from './Product';
+import Title from "./Title";
+import Product from "./Product";
 
-import { ProductConsumer } from '../context';
+import { ProductConsumer } from "../context";
 
 export default class ProductList extends React.Component {
   render() {
@@ -15,13 +15,15 @@ export default class ProductList extends React.Component {
             <div className="row">
               <ProductConsumer>
                 {value => {
-                  return value.products.map(product => <Product key={product.id} product={product} /> )
+                  return value.products.map(product => (
+                    <Product key={product.id} product={product} />
+                  ));
                 }}
               </ProductConsumer>
             </div>
           </div>
         </div>
       </React.Fragment>
-    )
+    );
   }
-};
+}

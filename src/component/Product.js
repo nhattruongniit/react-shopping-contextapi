@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
 // import { ProductCosumer } from '../context';
 
@@ -12,35 +12,41 @@ export default class Product extends React.Component {
       img: PropTypes.string,
       title: PropTypes.string,
       price: PropTypes.number,
-      inCart: PropTypes.bool,
+      inCart: PropTypes.bool
     }).isRequired
-  }
+  };
   render() {
-    const { 
+    const {
       props: {
-        product: { title, img, price, inCart } 
+        product: { title, img, price, inCart }
       }
-    }= this ;
+    } = this;
 
-    return(
+    return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
-          <div className="img-container p-5" onClick={() => console.log('you clicked me')}>
-            <Link to="details">
-              <img 
+          <div
+            className="img-container p-5"
+            onClick={() => console.log("you clicked me")}
+          >
+            <Link to="product-detail">
+              <img
                 title="product"
-                alt="product" 
+                alt="product"
                 className="card-img-top"
-                src={img} />
+                src={img}
+              />
             </Link>
-            <button 
-              type="button" 
-              className="card-btn" 
-              disabled={inCart || false} 
-              onClick={() => console.log('add to cart')}
+            <button
+              type="button"
+              className="card-btn"
+              disabled={inCart || false}
+              onClick={() => console.log("add to cart")}
             >
               {inCart ? (
-                <p className="mb-0" disabled>In Cart</p>
+                <p className="mb-0" disabled>
+                  In Cart
+                </p>
               ) : (
                 <i className="fas fa-cart-plus" />
               )}
@@ -55,9 +61,9 @@ export default class Product extends React.Component {
           </h5>
         </div>
       </ProductWrapper>
-    )
+    );
   }
-};
+}
 
 const ProductWrapper = styled.div`
   .card {
@@ -74,7 +80,7 @@ const ProductWrapper = styled.div`
   &:hover {
     .card {
       border: 0.04rem solid rgba(0, 0, 0, 0.2);
-      box-shadow: 2px 2px 5px 0px rgba(0, 0, 0,0 .2);
+      box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0 0.2);
     }
     .card-footer {
       background: rgba(247, 247, 247);
@@ -83,7 +89,7 @@ const ProductWrapper = styled.div`
 
   .img-container {
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
   }
 
   .img-container:hover .card-img-top {
