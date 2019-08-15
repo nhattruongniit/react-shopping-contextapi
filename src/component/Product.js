@@ -15,6 +15,7 @@ export default class Product extends React.Component {
       inCart: PropTypes.bool,
     }).isRequired
   }
+
   render() {
     const { 
       props: {
@@ -26,7 +27,7 @@ export default class Product extends React.Component {
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
           <div className="img-container p-5" onClick={() => console.log('you clicked me')}>
-            <Link to="details">
+            <Link to="product-detail">
               <img 
                 title="product"
                 alt="product" 
