@@ -9,7 +9,7 @@ This is project shopping phone.
 - React
 - State management with ContextAPI
 
-## Available Scripts
+Link reference: https://www.youtube.com/watch?v=-edmQKcOW8s&t=680s&fbclid=IwAR0cDvRcI7zCs4_YKeMqy6ugl8RpTcuYrjNnNthjAzx7bnSWcTZBnmdpKpQ
 
 In the project directory, you can run:
 

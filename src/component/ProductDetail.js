@@ -33,6 +33,6 @@ class ProductDetail extends React.Component {
       </React.Fragment>
     )
   }
-};
+}
 
 export default ProductDetail;
